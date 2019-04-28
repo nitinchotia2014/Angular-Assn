@@ -1,0 +1,99 @@
+/* Navbar */
+nav {
+    background: #4078c0;
+    padding: 15px;
+    margin: 0 auto;
+}
+nav div {
+    width: 700px;
+    margin: 0 auto;
+}
+nav div select, nav div .form-group input {
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    display: inline-block;
+    width: 25%;
+    outline: 0;
+}
+nav div .form-group {
+    float: right;
+    width: 65%;
+    position: relative;
+}
+nav div .form-group input {
+    width: 95%;
+}
+nav div span {
+    cursor: pointer;
+}
+nav div span i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Main Body */
+main {
+    width: 700px;
+    margin: 0 auto;
+}
+main p {
+    font-weight: 600;
+    font-size: 14px;
+}
+main .cardInner {
+    display: flex;
+    padding: 10px;
+    box-shadow: 0px -1px 8px 0 #00000033;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+main .cardInner img {
+    display: block;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+}
+main .cardInner .info {
+    margin-left: 25px;
+    width: 85%;
+}
+main table {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 #00000033;
+}
+main table tbody {
+    width: 100%;
+}
+main table tr td {
+    padding: 10px;
+    border-top: 1px solid #000;
+}
+main .cardInner .info h4, main .cardInner .info p {
+    margin: 0px;
+    margin-bottom: 10px;
+}
+main .cardInner .info p {
+    font-size: 12px;
+}
+main .cardInner .info .repo {
+    display: flex;
+    width: 100%;
+}
+main .cardInner .info .repo ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+main .cardInner .info .repo button {
+    margin-left: auto;
+    margin-right: 10px;
+    background: transparent;
+    border: 1.5px solid #4078c0;
+    color: #4078c0;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100px;
+    cursor: pointer;
+}

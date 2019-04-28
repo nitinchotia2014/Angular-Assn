@@ -1,21 +1,43 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav>
+    <div>
+        <select name="" id="" (change)="filterChanged($event.target.value)">
+            <option *ngFor="let type of types" [value]="type">{{type}}</option>
+        </select>
+    
+        <div class="form-group">
+            <input type="text">
+            <span (click)="search($event)"><i class="fas fa-search"></i></span>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <p *ngIf="results">Total Results: {{ results.length }}</p>
+    <div class="card" *ngFor="let result of results | orderBy : sortType : reverse | paginate: { itemsPerPage: 6, currentPage: p } ; let i = index">
+        <div class="cardInner">
+            <img src="{{ result.avatar_url }}" alt="">
+            <div class="info">
+                <h4>{{ result.login }}</h4>
+                <p>Profile URL: {{ result.url }}</p>
+                <div class="repo">
+                    <ul>
+                        <li>Data One: Value One</li>
+                        <li>Data Two: Value Two</li>
+                    </ul>
+                    <button (click)="detailsView(i, result)">Details</button>
+                </div>
+            </div>
+        </div>
+        <table *ngIf='details === i' [hidden]='detailsview'>
+            <tr *ngFor="let result2 of results2">
+                <td>{{ result2.name }}</td>
+                <td>{{ result2.language }}</td>
+            </tr>
+        </table>
+    </div>
+    <ul class="pagination" *ngIf='results'>  
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>  
+    </ul>
+</main>
 
 <router-outlet></router-outlet>

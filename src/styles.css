@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato';
+}
+.ngx-pagination {
+    float: right !important;
+}
+.ngx-pagination .current {
+    background: none !important;
+    color: #000 !important;
+}
+.ngx-pagination a {
+    color: #0000007a !important;
+}
+.ngx-pagination .pagination-previous {
+    display: none !important;
+}
+.ngx-pagination .pagination-next {
+    display: none !important;
+}
