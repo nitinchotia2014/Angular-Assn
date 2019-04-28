@@ -21,14 +21,6 @@ export class AppComponent {
     sortType: string = 'login';
     detailsview: boolean = true;
 
-    // results2 = [
-    //     { name: 1, language: 2 },
-    //     { name: 3, language: 4 },
-    //     { name: 5, language: 6 },
-    //     { name: 7, language: 8 },
-    //     { name: 9, language: 10 }        
-    // ]; 
-
     constructor(private http: HttpClient) { 
         this.types = ['Sort By A-Z', 'Sort by Z-A', 'Sort by Rank (Asc)', 'Sort by Rank (Desc)'];
         this.order = {
